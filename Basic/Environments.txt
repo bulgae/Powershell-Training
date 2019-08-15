@@ -1,0 +1,5 @@
+<Environments>
+<Environment Name="SIT" ServerInstance="Localhost\SQL2012" SourceFileLocation="\\Server\Data\Files"></Environment>
+<Environment Name="TST" ServerInstance="Localhost\TST2012" SourceFileLocation="\\TSTServer\Data\Files"></Environment>
+<Environment Name="RST" ServerInstance="Localhost\RST2012" SourceFileLocation="\\RSTServer\Data\Files"></Environment>
+</Environments>
