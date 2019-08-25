@@ -50,13 +50,43 @@ Get-Alias -Name gsv
 ps -c dc
 Get-Alias ps
 Get-Process -ComputerName
+
 ## Extend powershell capability with snapin
 get-help *snapin*
 Get-PSSnapin -Registered
 Add-PSSnapin -name *exch*
-## Work with Modules
+
+## Work with Modules- Finding and using local modules
 get-help *module*
 Get-Module 
 Get-Module -ListAvailable # Get the list of what it is available
 Import-Module -name ActiveDirectory #V2 of Powershell
-Get-Command -Module act
+Get-Command -Module ActiveDirectory
+Get-Help Get-ADComputer
+Get-ADComputer
+get-help get-ad*
+get-adcomputer -filter *
+
+## Installing modules and packages from a repository
+Find-Module  # nuget allows us to get module
+install-Module PSReadline # install from repository
+Import-Module PSreadline
+Set-ExecutionPolicy remotesigned
+Get-service -name 'bits'
+Set-PSReadlineOption -EditMode Emacs
+get-process -name
+get-process -name explorer # repository is easy to distribute module
+find-package
+get-help *package*
+
+## Understanding Pipeline
+Get-service -name 'bits'
+Stop-Service -name bits
+Start-Service -name 'bits'
+get-service -name bits | stop-service # string together with multiple pipeline
+get-service | Stop-Service -WhatIf # stop service in order
+get-service | Stop-Service -Confirm # do you want? same as what if
+# cmd | cmd | cmd| cmd| # the goal of the syntax is one liner management but confusing
+
+## working with files and printers
+get-help *file*
